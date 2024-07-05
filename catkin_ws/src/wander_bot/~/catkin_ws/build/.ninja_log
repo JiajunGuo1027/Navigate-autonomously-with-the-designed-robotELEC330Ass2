@@ -1,0 +1,7 @@
+# ninja log v5
+0	98	0	/home/jiajun/catkin_ws/src/wander_bot/~/catkin_ws/build/CMakeFiles/clean_test_results	71736988d602e618
+0	98	0	CMakeFiles/clean_test_results	71736988d602e618
+0	2414	1679057945585544669	CMakeFiles/stopper.dir/src/run_stopper.cpp.o	72bc20457446c3ab
+3	2307	1679663617571242573	CMakeFiles/stopper.dir/src/run_stopper.cpp.o	72bc20457446c3ab
+2	2945	1679663618207244774	CMakeFiles/stopper.dir/src/Stopper.cpp.o	a79f1278ee865a90
+2945	3246	1679663618511245824	/home/jiajun/catkin_ws/wander_bot/devel/lib/wander_bot/stopper	7b9706702be5f4d9

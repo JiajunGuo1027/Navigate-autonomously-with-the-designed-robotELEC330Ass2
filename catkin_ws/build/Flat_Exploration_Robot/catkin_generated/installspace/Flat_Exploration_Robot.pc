@@ -1,0 +1,8 @@
+prefix=/home/jiajun/catkin_ws/install
+
+Name: Flat_Exploration_Robot
+Description: Description of Flat_Exploration_Robot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

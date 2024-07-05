@@ -1,0 +1,2 @@
+beginner_tutorials:flat_exploration_robot:flat_exploration_robot_nav:my_turtle_pkg:wander_bot
+-DCATKIN_DEVEL_PREFIX=/home/jiajun/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jiajun/catkin_ws/install -G Unix Makefiles

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot name="flat_exploration_robot" xmlns:xacro="http://ros.org/wiki/xacro">  
+
+  <xacro:include filename="$(find flat_exploration_robot)/urdf/flat_exploration_robot.gazebo.xacro" /> 
+
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">  
+    <parent link="base_footprint"/>  
+    <child link="base_link"/>  
+    <origin rpy="0 0 0" xyz="0 0 0"/>  
+  </joint>  
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00170240533209981 0.0258535998113955 0.00518967680626991"
+        rpy="0 0 0" />
+      <mass
+        value="0.520889390983862" />
+      <inertia
+        ixx="0.00138954204116713"
+        ixy="-9.50836142281639E-10"
+        ixz="1.02393622762989E-06"
+        iyy="0.00293618565239995"
+        iyz="8.49271524475628E-07"
+        izz="0.00156463783284232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Gold</material>
+  </gazebo>
+  <link
+    name="Wheel_R_Link">
+    <inertial>
+      <origin
+        xyz="0.016798 1.9704E-07 -1.4445E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.064086" />
+      <inertia
+        ixx="9.2188E-05"
+        ixy="-1.0171E-10"
+        ixz="6.8702E-11"
+        iyy="5.1693E-05"
+        iyz="2.0947E-10"
+        izz="5.1693E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Wheel_R_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Wheel_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="Wheel_R_Link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <joint
+    name="Wheel_R_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.10419 -0.032192 0.011583"
+      rpy="2.7415 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_R_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Wheel_L_Link">
+    <inertial>
+      <origin
+        xyz="0.016798 6.6401E-08 -3.1185E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.064086" />
+      <inertia
+        ixx="9.2188E-05"
+        ixy="-3.2558E-11"
+        ixz="1.6386E-10"
+        iyy="5.1693E-05"
+        iyz="1.7698E-10"
+        izz="5.1693E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Wheel_L_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Wheel_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="Wheel_L_Link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <joint
+    name="Wheel_L_Joint"
+    type="continuous">
+    <origin
+      xyz="0.10081 -0.032192 0.011583"
+      rpy="-1.8682 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Wheel_L_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Caster_Link">
+    <inertial>
+      <origin
+        xyz="-0.00092189 -0.0043701 -5.421E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0012351" />
+      <inertia
+        ixx="7.7997E-08"
+        ixy="-9.0404E-09"
+        ixz="9.2851E-23"
+        iyy="7.6292E-08"
+        iyz="-7.2934E-23"
+        izz="6.2711E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Caster_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Caster_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="Caster_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <joint
+    name="Caster_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.0016872 0.077808 -0.0074166"
+      rpy="1.5708 0 -1.5607" />
+    <parent
+      link="base_link" />
+    <child
+      link="Caster_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CasterWheel_Link">
+    <inertial>
+      <origin
+        xyz="-4.2904E-06 -2.0892E-11 -6.632E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0015057" />
+      <inertia
+        ixx="4.1476E-08"
+        ixy="3.8863E-16"
+        ixz="-8.5775E-12"
+        iyy="4.1501E-08"
+        iyz="-2.5539E-16"
+        izz="4.8832E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/CasterWheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/CasterWheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="CasterWheel_Link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <joint
+    name="CasterWheel_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.005 -0.017 0"
+      rpy="0 0 -1.3801" />
+    <parent
+      link="Caster_Link" />
+    <child
+      link="CasterWheel_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  
+  <!-- laser lidar -->
+  <link
+    name="Ultrasonic_Link">
+    <inertial>
+      <origin
+        xyz="3.0358E-18 0 0.0022557"
+        rpy="0 0 0" />
+      <mass
+        value="0.0020101" />
+      <inertia
+        ixx="4.5366E-08"
+        ixy="1.8495E-23"
+        ixz="-1.2564E-23"
+        iyy="2.2896E-07"
+        iyz="2.0553E-25"
+        izz="2.6086E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Ultrasonic_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Ultrasonic_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="Ultrasonic_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <joint
+    name="Ultrasonic_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.0022649 -0.093702 0.0090834"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Ultrasonic_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Camera_Link">
+    <inertial>
+      <origin
+        xyz="4.864E-09 0.011658 0.00013706"
+        rpy="0 0 0" />
+      <mass
+        value="0.0083079" />
+      <inertia
+        ixx="6.2579E-07"
+        ixy="9.2136E-13"
+        ixz="1.0311E-12"
+        iyy="7.0922E-07"
+        iyz="-2.1483E-08"
+        izz="1.0034E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Camera_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_exploration_robot/meshes/Camera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="Camera_Link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <joint
+    name="Camera_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.00098996 -0.088796 0.058583"
+      rpy="0 0 4.7124" />
+    <parent
+      link="base_link" />
+    <child
+      link="Camera_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+    <!-- laser lidar -->
+  <link name="base_laser_link">  
+    <visual>  
+      <geometry>  
+        <cylinder length="0.06" radius="0.04"/>   
+      </geometry>  
+      <material name="white">  
+          <color rgba="1 1 1 1"/>  
+      </material>  
+    </visual>  
+  </link>  
+  
+  <joint name="laser_joint" type="fixed">  
+    <parent link="base_link"/>  
+    <child link="base_laser_link"/>  
+    <origin xyz="0 0.0 0.08"/>  
+  </joint> 
+
+</robot>
